@@ -3,46 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Crédito</title>
+    <title>TU COOP | Simulador de Crédito</title>
     <link rel="stylesheet" href="simulador.css">
-    <script src="simulador.js"></script>
     <script src="funciones.js"></script>
+    <script src="simulador.js"></script>
 </head>
 <body>
 
     <div class="container">
+
+        <header class="encabezado">
+            <img src="logo.png" alt="Logo TU COOP" class="logoBanco">
+        </header>
+
         <h1>Simulador de Crédito</h1>
+        <p class="subtitulo">Tu vecino financiero</p>
 
         <h2>Datos financieros</h2>
+
         <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
+        <input type="text" id="txtIngresos" placeholder="Ej. 1000">
 
         <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
+        <input type="text" id="txtEgresos" placeholder="Ej. 400">
 
-        <p>Disponible: <span id="lblDisponibleValor"></span></p>
-        <p>Capacidad de pago mensual: <span id="lblCapacidadValor"></span></p>
+        <div class="resultados">
+            <p>Disponible: <span id="lblDisponibleValor"></span></p>
+            <p>Capacidad de pago mensual: <span id="lblCapacidadValor"></span></p>
+        </div>
 
         <h2>Solicitud de crédito</h2>
+
         <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
+        <input type="text" id="txtMonto" placeholder="Ej. 2000">
 
         <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo">
+        <input type="text" id="txtPlazo" placeholder="Ej. 2">
 
         <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
+        <input type="text" id="txtTasaInteres" placeholder="Ej. 10">
 
-        <p>Interés a pagar: <span id="lblInteresValor"></span></p>
-        <p>Impuestos y contribución a SOLCA: USD 100.00</p>
-        <p>Total préstamo: <span id="lblTotalValor"></span></p>
-        <p>Cuota mensual: <span id="lblCuotaValor"></span></p>
-        <p>Estado de crédito: <span id="lblEstadoCredito">ANALIZANDO...</span></p>
+        <div class="resultados">
+            <p>Interés a pagar: <span id="lblInteresValor"></span></p>
+            <p>Impuestos y contribución a SOLCA: <span>USD 100.00</span></p>
+            <p>Total préstamo: <span id="lblTotalValor"></span></p>
+            <p>Cuota mensual: <span id="lblCuotaValor"></span></p>
+            <p>Estado de crédito: <span id="lblEstadoCredito"></span></p>
+        </div>
 
         <div class="buttons">
             <button id="btnCalcularCredito" onclick="calcular()">Calcular Crédito</button>
             <button id="btnReiniciar">Reiniciar</button>
         </div>
+
+        <footer>
+            <p>TU COOP © 2026 | Tu vecino financiero</p>
+        </footer>
+
     </div>
 
 </body>
