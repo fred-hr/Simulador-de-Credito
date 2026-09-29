@@ -22,6 +22,11 @@ function calcular() {
     mostrarSpam("lblTotalValor", "USD " + totalPagar.toFixed(2));
     mostrarSpam("lblCuotaValor", "USD " + cuotaMensual.toFixed(2));
 
-
+    let creditoAprobado = aprobarCredito(capacidadPago, cuotaMensual);
+    if (creditoAprobado) {
+        mostrarSpam("lblEstadoCredito", "APROBADO");
+    } else {
+        mostrarSpam("lblEstadoCredito", "RECHAZADO");
+    }
 
 }   
