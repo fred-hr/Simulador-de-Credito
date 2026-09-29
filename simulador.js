@@ -30,3 +30,20 @@ function calcular() {
     }
 
 }   
+
+function reiniciar() {
+    let vacio = "";
+
+    document.getElementById("txtIngresos").value = vacio;
+    document.getElementById("txtEgresos").value = vacio;
+    document.getElementById("txtMonto").value = vacio;
+    document.getElementById("txtPlazo").value = vacio;
+    document.getElementById("txtTasaInteres").value = vacio;
+
+    mostrarSpam("lblDisponibleValor", vacio);
+    mostrarSpam("lblCapacidadValor", vacio);
+    mostrarSpam("lblInteresValor", vacio);
+    mostrarSpam("lblTotalValor", vacio);
+    mostrarSpam("lblCuotaValor", vacio);
+    mostrarSpam("lblEstadoCredito", vacio);
+}
