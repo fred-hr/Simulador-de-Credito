@@ -6,4 +6,18 @@ function calcularDisponible(ingreso, egreso) {
     }
     return disponible;
 }
- 
+function recuperarTexto(id) {
+
+    let componente = document.getElementById(id);
+    return componente.value;
+}
+function recuperarFloat(id) {
+
+    let valorTexto = recuperarTexto(id);
+    let valorFloat = parseFloat(valorTexto);
+    return valorFloat;
+}
+function mostrarSpam(id, valor) {
+    let componente = document.getElementById(id);
+    componente.textContent = valor;
+}
