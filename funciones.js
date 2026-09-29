@@ -40,3 +40,15 @@ function calcularTotalPagar(monto, interes) {
     let totalPagar = monto + interes + impuestoSolca;
     return totalPagar;
 }
+function calcularCuotaMensual(totalPagar, plazoAnios) {
+    let plazoMeses = plazoAnios * 12;
+    let cuotaMensual = totalPagar / plazoMeses;
+    return cuotaMensual;
+}
+function aprobarCredito(capacidadPago, cuotaMensual) {
+    if (capacidadPago > cuotaMensual) {
+        return true;
+    } else {
+        return false;
+    }
+}

@@ -13,11 +13,14 @@ function calcular() {
     let capacidadPago = calcularCapacidadPago(disponible);
     let interes = calcularInteresSimple(monto, tasa, plazoAnios);
     let totalPagar = calcularTotalPagar(monto, interes);
+    let cuotaMensual = calcularCuotaMensual(totalPagar, plazoAnios);
+ 
 
     mostrarSpam("lblDisponibleValor", "USD " + disponible.toFixed(2));
     mostrarSpam("lblCapacidadValor", "USD " + capacidadPago.toFixed(2));
     mostrarSpam("lblInteresValor", "USD " + interes.toFixed(2));
     mostrarSpam("lblTotalValor", "USD " + totalPagar.toFixed(2));
+    mostrarSpam("lblCuotaValor", "USD " + cuotaMensual.toFixed(2));
 
 
 
