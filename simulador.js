@@ -8,12 +8,17 @@ function calcular() {
     let tasa = recuperarEntero("txtTasaInteres");
     let plazoAnios = recuperarEntero("txtPlazo");
 
+
     let disponible = calcularDisponible(ingresos, egresos);
     let capacidadPago = calcularCapacidadPago(disponible);
     let interes = calcularInteresSimple(monto, tasa, plazoAnios);
+    let totalPagar = calcularTotalPagar(monto, interes);
 
     mostrarSpam("lblDisponibleValor", "USD " + disponible.toFixed(2));
     mostrarSpam("lblCapacidadValor", "USD " + capacidadPago.toFixed(2));
     mostrarSpam("lblInteresValor", "USD " + interes.toFixed(2));
+    mostrarSpam("lblTotalValor", "USD " + totalPagar.toFixed(2));
+
+
 
 }   
