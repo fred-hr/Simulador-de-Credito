@@ -5,8 +5,9 @@ function calcular() {
     let egresos = recuperarFloat("txtEgresos");
    
     let disponible = calcularDisponible(ingresos, egresos);
+    let capacidadPago = calcularCapacidadPago(disponible);
 
-    mostrarSpam("lblDisponibleValor", disponible.toFixed(2));
+    mostrarSpam("lblDisponibleValor", "USD " + disponible.toFixed(2));
+    mostrarSpam("lblCapacidadValor", "USD " + capacidadPago.toFixed(2));
 
-
-}
+}   

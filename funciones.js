@@ -21,3 +21,8 @@ function mostrarSpam(id, valor) {
     let componente = document.getElementById(id);
     componente.textContent = valor;
 }
+function calcularCapacidadPago(montoDisponible) {
+    let capacidadPago = montoDisponible * 0.50;
+
+    return capacidadPago;
+}
