@@ -27,7 +27,7 @@ function mostrarSpam(id, valor) {
     componente.textContent = valor;
 }
 function calcularCapacidadPago(montoDisponible) {
-    let capacidadPago = montoDisponible * 0.50;
+    let capacidadPago = montoDisponible * 0.30;
 
     return capacidadPago;
 }
