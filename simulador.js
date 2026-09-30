@@ -69,5 +69,5 @@ function reiniciar() {
     mostrarSpam("errorEgresos", vacio);
     mostrarSpam("errorMonto", vacio);
     mostrarSpam("errorPlazo", vacio);
-    mostrarSpam("errorTasa", vacio);
+    mostrarSpam("errorTasaInteres", vacio);
 }
