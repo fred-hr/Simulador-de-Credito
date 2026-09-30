@@ -210,3 +210,12 @@ footer p {
         font-size: 14px;
     }
 }
+
+.mensajeError {
+    display: block;
+    color: red;
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 5px;
+    min-height: 16px;
+}

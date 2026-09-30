@@ -1,0 +1,20 @@
+PROMPT 1:
+Actúa como programador JavaScript y agrega validaciones a mi formulario de crédito.
+No cambies ninguno de los ID existentes.
+Usa onblur y this para validar cada campo.
+Los mensajes de error deben aparecer debajo de cada input.
+Los mensajes deben mostrarse en color rojo.
+
+PROMPT 2:
+Valida que todos los campos sean obligatorios y solo acepten números.
+Ingresos y egresos pueden aceptar decimales.
+Monto, plazo y tasa de interés deben ser números enteros.
+Aplica valores mínimos y máximos razonables para cada campo.
+Muestra un mensaje específico cuando alguna regla no se cumpla.
+
+PROMPT 3:
+Haz que al presionar el botón Calcular Crédito se validen todos los campos.
+Si existe algún error, no se deben ejecutar los cálculos.
+Los errores deben permanecer debajo de cada campo correspondiente.
+Cuando el usuario corrija un dato, el mensaje debe desaparecer.
+El botón Reiniciar también debe limpiar todos los mensajes de validación.

@@ -52,3 +52,47 @@ function aprobarCredito(capacidadPago, cuotaMensual) {
         return false;
     }
 }
+function validarNumero(componente, idError, nombre, minimo, maximo, entero) {
+    let valor = componente.value.trim();
+    let mensaje = "";
+
+    if (valor === "") {
+        mensaje = "El campo " + nombre + " es obligatorio.";
+    } else if (isNaN(valor)) {
+        mensaje = "Solo se permiten números.";
+    } else {
+        let numero = Number(valor);
+
+        if (entero && !Number.isInteger(numero)) {
+            mensaje = "El campo " + nombre + " debe ser un número entero.";
+        } else if (numero < minimo) {
+            mensaje = "El valor mínimo permitido es " + minimo + ".";
+        } else if (numero > maximo) {
+            mensaje = "El valor máximo permitido es " + maximo + ".";
+        }
+    }
+
+    mostrarSpam(idError, mensaje);
+
+    return mensaje === "";
+}
+
+function validarIngresos(componente) {
+    return validarNumero(componente, "errorIngresos", "ingresos", 0.01, 100000, false);
+}
+
+function validarEgresos(componente) {
+    return validarNumero(componente, "errorEgresos", "egresos", 0, 100000, false);
+}
+
+function validarMonto(componente) {
+    return validarNumero(componente, "errorMonto", "monto", 100, 50000, true);
+}
+
+function validarPlazo(componente) {
+    return validarNumero(componente, "errorPlazo", "plazo", 1, 10, true);
+}
+
+function validarTasaInteres(componente) {
+    return validarNumero(componente, "errorTasaInteres", "tasa de interés", 1, 30, true);
+}

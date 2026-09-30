@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="funciones.js"></script>
     <script src="simulador.js"></script>
 </head>
+
 <body>
 
     <div class="container">
@@ -22,10 +24,12 @@
         <h2>Datos financieros</h2>
 
         <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos" placeholder="Ej. 1000">
+        <input type="text" id="txtIngresos" placeholder="Ej. 1000" onblur="validarIngresos(this)">
+        <span class="mensajeError" id="errorIngresos"></span>
 
         <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos" placeholder="Ej. 400">
+        <input type="text" id="txtEgresos" placeholder="Ej. 400" onblur="validarEgresos(this)">
+        <span class="mensajeError" id="errorEgresos"></span>
 
         <div class="resultados">
             <p>Disponible: <span id="lblDisponibleValor"></span></p>
@@ -35,13 +39,16 @@
         <h2>Solicitud de crédito</h2>
 
         <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto" placeholder="Ej. 2000">
+        <input type="text" id="txtMonto" placeholder="Ej. 2000" onblur="validarMonto(this)">
+        <span class="mensajeError" id="errorMonto"></span>
 
         <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo" placeholder="Ej. 2">
+        <input type="text" id="txtPlazo" placeholder="Ej. 2" onblur="validarPlazo(this)">
+        <span class="mensajeError" id="errorPlazo"></span>
 
         <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres" placeholder="Ej. 10">
+        <input type="text" id="txtTasaInteres" placeholder="Ej. 10" onblur="validarTasaInteres(this)">
+        <span class="mensajeError" id="errorTasaInteres"></span>
 
         <div class="resultados">
             <p>Interés a pagar: <span id="lblInteresValor"></span></p>
@@ -63,4 +70,5 @@
     </div>
 
 </body>
+
 </html>

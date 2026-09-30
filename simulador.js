@@ -1,6 +1,12 @@
 //AQUI EL JAVASCRIPT PARA MANIPULAR EL HTML
 function calcular() {
 
+    let formularioValido = validarFormulario();
+
+    if (!formularioValido) {
+        return;
+    }
+
     let ingresos = recuperarFloat("txtIngresos");
     let egresos = recuperarFloat("txtEgresos");
 
@@ -8,13 +14,11 @@ function calcular() {
     let tasa = recuperarEntero("txtTasaInteres");
     let plazoAnios = recuperarEntero("txtPlazo");
 
-
     let disponible = calcularDisponible(ingresos, egresos);
     let capacidadPago = calcularCapacidadPago(disponible);
     let interes = calcularInteresSimple(monto, tasa, plazoAnios);
     let totalPagar = calcularTotalPagar(monto, interes);
     let cuotaMensual = calcularCuotaMensual(totalPagar, plazoAnios);
- 
 
     mostrarSpam("lblDisponibleValor", "USD " + disponible.toFixed(2));
     mostrarSpam("lblCapacidadValor", "USD " + capacidadPago.toFixed(2));
@@ -23,13 +27,27 @@ function calcular() {
     mostrarSpam("lblCuotaValor", "USD " + cuotaMensual.toFixed(2));
 
     let creditoAprobado = aprobarCredito(capacidadPago, cuotaMensual);
+
     if (creditoAprobado) {
         mostrarSpam("lblEstadoCredito", "APROBADO");
     } else {
         mostrarSpam("lblEstadoCredito", "RECHAZADO");
     }
+}
 
-}   
+function validarFormulario() {
+    let ingresosValidos = validarIngresos(document.getElementById("txtIngresos"));
+    let egresosValidos = validarEgresos(document.getElementById("txtEgresos"));
+    let montoValido = validarMonto(document.getElementById("txtMonto"));
+    let plazoValido = validarPlazo(document.getElementById("txtPlazo"));
+    let tasaValida = validarTasaInteres(document.getElementById("txtTasaInteres"));
+
+    return ingresosValidos &&
+           egresosValidos &&
+           montoValido &&
+           plazoValido &&
+           tasaValida;
+}
 
 function reiniciar() {
     let vacio = "";
@@ -46,4 +64,10 @@ function reiniciar() {
     mostrarSpam("lblTotalValor", vacio);
     mostrarSpam("lblCuotaValor", vacio);
     mostrarSpam("lblEstadoCredito", vacio);
+
+    mostrarSpam("errorIngresos", vacio);
+    mostrarSpam("errorEgresos", vacio);
+    mostrarSpam("errorMonto", vacio);
+    mostrarSpam("errorPlazo", vacio);
+    mostrarSpam("errorTasa", vacio);
 }
